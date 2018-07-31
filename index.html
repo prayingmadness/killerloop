@@ -79,7 +79,7 @@
                 </div>
 
 
-                <video id="kl_vid" preload="auto" poster="video-poster.jpg" allowfullscreen="true" height="400">
+                <video id="kl_vid" preload="auto" poster="video-poster.jpg" allowfullscreen="true" height="400" controls>
                     <source src="https://s3-eu-west-1.amazonaws.com/thehunt/kl-interactive-26.11.mp4" type="video/mp4">
                     <source src="https://s3-eu-west-1.amazonaws.com/thehunt/kl-interactive-26.11.webm" type="video/webm">
                 </source></source></video>
@@ -252,6 +252,11 @@
         <script>
             $(function() {
                 KL.Global.init();
+            });
+
+            $('#kl_vid').on('play', function() {
+                console.log('playing');
+                document.querySelector('#kl_vid').removeAttribute('controls');
             });
 
             //hax
